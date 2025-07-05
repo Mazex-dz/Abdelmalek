@@ -338,6 +338,41 @@ html {
   scroll-behavior: smooth !important;
   transition: all 0.3s ease-in-out;
 }
+/* لإصلاح التمركز العام */
+section,
+header,
+footer,
+.hero,
+.aboutMe,
+.works,
+.contactcontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* إصلاح مشاكل العرض في الشاشات الصغيرة */
+@media (max-width: 1024px) {
+  .aboutMe,
+  .hero,
+  .contact {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .aboutMeImg,
+  .heroImg {
+    max-width: 100%;
+  }
+
+  .works ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
 
 
 

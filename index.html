@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
-    <title>M4C | Portfolio</title>
+    <title>Document</title>
 </head>
 <body>
 <header>
@@ -107,6 +107,18 @@
     </div></div>
 </section>
 <hr />
+<button class="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+<script>
+  const backToTop = document.querySelector(".backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "flex";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+</script>
+
 <footer>
     <p> Made By Abdelmalek Zergui </p>
 </footer>

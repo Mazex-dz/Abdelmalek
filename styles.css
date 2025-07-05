@@ -13,6 +13,7 @@ body {
   min-height: 100vh;
   color: #f3f3f3;
   text-align: center;
+  transition: background-color 0.5s ease;
 }
 
 header {
@@ -23,6 +24,7 @@ header {
   padding: 2rem 1rem;
   margin: 0 auto;
   text-align: left;
+  animation: fadeIn 1s ease forwards;
 }
 
 .logo {
@@ -44,6 +46,22 @@ header {
   color: #f3f3f3;
   font-weight: bold;
   transition: color 0.3s;
+  position: relative;
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #0bc4ff;
+  transition: 0.3s;
+}
+
+.navigation a:hover::after {
+  width: 100%;
 }
 
 .navigation a:hover {
@@ -76,6 +94,7 @@ hr {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .heroSub {
@@ -105,6 +124,7 @@ hr {
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   transition: all 0.3s ease;
+  animation: pulse 2s infinite;
 }
 
 .hireMe:hover {
@@ -115,6 +135,7 @@ hr {
 .heroImg {
   max-width: 300px;
   filter: drop-shadow(0 0 20px #0bc4ff44);
+  animation: float 4s ease-in-out infinite;
 }
 
 .aboutMe {
@@ -161,15 +182,18 @@ hr {
 .Aboutmepar {
   text-align: justify;
   color: #ddd;
+  line-height: 1.6;
 }
-.worksContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: left;
-    margin: 5rem auto;
-    max-width: 1200px;
+
+.worksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+  margin: 5rem auto;
+  max-width: 1200px;
 }
+
 .projectTitle {
   display: flex;
   justify-content: center;
@@ -180,39 +204,34 @@ hr {
   width: 100%;
 }
 
-.works ul{
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 24px;
-    padding: 0.6rem 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    transition: all 0.3s ease;
+.works ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px;
+  padding: 0.6rem 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
 
+.works li {
+  border-radius: 16px;
+  background-color: rgba(137, 43, 226, 0.26);
+  backdrop-filter: blur(4px);
+  padding: 1rem 4rem;
+  transition: transform 0.3s ease;
 }
-.works li{
-    border-radius: 16px;
-    background-color: rgba(137, 43, 226, 0.26);
-    backdrop-filter: blur(4px);
-    padding: 1rem 4rem;
-}
+
 .works li img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    transition: transform 0.2s;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s;
 }
-.works li :hover{
-    transform: scale(1.5);
-}.contactcontainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
-    margin: 2rem auto;
-    max-width: 1200px;
+
+.works li :hover {
+  transform: scale(1.1);
 }
 
 .contactcontainer {
@@ -273,106 +292,44 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.3s ease;
 }
 
 .socialMedia a:hover {
   background-color: #0bc4ff;
+  transform: rotate(10deg) scale(1.1);
 }
 
 .socialMedia img {
   width: 24px;
   height: 24px;
 }
-footer{
+
+footer {
   color: #f3f3f3;
   padding: 2rem;
   text-align: center;
 }
-@media (max-width: 1023px) {
-  header {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
 
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .heroImg {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .name,
-  .title {
-    font-size: 2rem;
-  }
-
-  .arrow {
-    display: none;
-  }
-
-  .aboutMe {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .textContainer {
-    align-items: center;
-    margin: 0 1.5rem;
-    gap: 1.2rem;
-  }
-
-  .aboutName,
-  .aboutTitle {
-    font-size: 2rem;
-  }
-
-  .light {
-    width: 60px;
-  }
-
-  .aboutMeImg {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .works {
-    padding: 0;
-  }
-
-  .worksContainer {
-    padding: 3rem 1rem;
-    gap: 2rem;
-  }
-
-  .projectTitle {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .works ul {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0;
-  }
-
-  .contactContainer {
-    margin: 5rem 1.5rem;
-    gap: 2rem;
-  }
-
-  .contact {
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-right: 0;
-    align-items: center;
-    text-align: center;
-  }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
